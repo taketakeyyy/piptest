@@ -25,12 +25,35 @@ PyPi に公開したくない自作モジュールを作ることはよくあり
 # -*- coding: utf-8 -*-
 
 # mylib フォルダにインストールした場合、パスを通す
-# import sys
-# sys.path.append('mylib')
+import sys
+sys.path.append('mylib')
 
 # モジュール内の関数を import する
 from piptest import call
+from piptest import Dog
 
-# モジュール内の関数を呼び出す
-call()
+if __name__ == "__main__":
+    call()
+
+    dog = Dog("Taro")
+    dog.bark()
+```
+
+これを実行してみます。
+
+```sh
+>
+```
+
+## piptestのアップデート
+パッケージのアップデートは以下のコマンドで行います。
+
+```sh
+> pip install --upgrade [パッケージ名]
+```
+
+なので、 `piptest` をアップデートしたい場合は以下のコマンドを使います。
+
+```sh
+> pip install --upgrade piptest
 ```
