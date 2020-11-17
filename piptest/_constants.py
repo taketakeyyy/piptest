@@ -4,7 +4,7 @@ Package metadata
 
 __author__ = "taketakeyyy"
 __url__ = ""
-__version__ = "0.1.0"
+__version__ = "0.0.1"
 
 
 import os
