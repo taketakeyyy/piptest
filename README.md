@@ -28,15 +28,23 @@ PyPi に公開したくない自作モジュールを作ることはよくあり
 import sys
 sys.path.append('mylib')
 
-# piptest パッケージ内のモジュールを import する
+# モジュール内の関数を import する
 from piptest import call
 from piptest import Dog
+from piptest import __author__
+from piptest import __url__
+from piptest import __version__
 
 if __name__ == "__main__":
     call()
 
     dog = Dog("Taro")
     dog.bark()
+
+    print("===[piptest info]===")
+    print(f"author:{__author__}")
+    print(f"url:{__url__}")
+    print(f"version:{__version__}")
 ```
 
 これを実行してみます。
@@ -45,9 +53,13 @@ if __name__ == "__main__":
 > python run.py
 Hello, here is pip test.
 Bow! Bow name is Taro!
+===[piptest info]===
+author:taketakeyyy
+url:https://github.com/taketakeyyy/piptest
+version:0.1.0
 ```
 
-`piptest` の `call()` と `dog.bark()` が呼び出せました。
+`piptest` の `call()`, `dog.bark()` のモジュールや、パッケージ情報が呼び出せました。
 
 
 ## piptestのアップデート
@@ -62,5 +74,8 @@ Bow! Bow name is Taro!
 なので、 `piptest` をアップデートしたい場合は以下のコマンドを使います。
 
 ```sh
+# mylib にインストールした場合
+> pip install --upgrade git+https://github.com/taketakeyyy/piptest.git -t mylib
+# システムにインストールした場合
 > pip install --upgrade git+https://github.com/taketakeyyy/piptest.git
 ```
