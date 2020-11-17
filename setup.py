@@ -6,7 +6,7 @@ setuptools.setup(
     author="taketakeyyy",
     author_email="taketakeyyy@gmail.com",
     description="piptest is pip test, haha.",
-    long_description="pip install via github",
+    long_description="pip install via github.",
     long_description_content_type="text/markdown",
     url="",
     packages=setuptools.find_packages(),

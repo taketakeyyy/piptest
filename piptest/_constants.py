@@ -3,7 +3,7 @@ Package metadata
 """
 
 __author__ = "taketakeyyy"
-__url__ = ""
+__url__ = "https://github.com/taketakeyyy/piptest"
 __version__ = "0.1.0"
 
 

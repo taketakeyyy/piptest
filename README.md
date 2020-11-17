@@ -1,9 +1,9 @@
 # piptest
-自作モジュールを GitHub 経由で `pip install` するサンプルプログラム。
+自作パッケージ（モジュール）を GitHub 経由で `pip install` するサンプルプログラム。
 
 PyPi に公開したくない自作モジュールを作ることはよくあります。
 
-この`piptest`をGitHub経由でインストールして、モジュール呼び出するサンプルプログラムです。
+この `piptest` をGitHub経由でインストールして、モジュール呼び出しするサンプルプログラムです。
 
 # 使い方
 
@@ -12,10 +12,10 @@ PyPi に公開したくない自作モジュールを作ることはよくあり
 この `sandbox` フォルダ直下で、以下のどれかのコマンドを実行してインストールします。
 
 * `pip install git+https://github.com/taketakeyyy/piptest.git -t mylib`
-    - `sandbox` 直下に `mylib` というフォルダが作成され、そこに `piptest` モジュールがインストールされます。
+    - `sandbox` 直下に `mylib` というフォルダが作成され、そこに `piptest` パッケージがインストールされます。
 
 * `pip install git+https://github.com/taketakeyyy/piptest.git`
-    - システムに `piptest` がインストールされます。
+    - システムに `piptest` パッケージがインストールされます。
 
 ## piptestを使ってみる
 
@@ -28,7 +28,7 @@ PyPi に公開したくない自作モジュールを作ることはよくあり
 import sys
 sys.path.append('mylib')
 
-# モジュール内の関数を import する
+# piptest パッケージ内のモジュールを import する
 from piptest import call
 from piptest import Dog
 
@@ -42,11 +42,18 @@ if __name__ == "__main__":
 これを実行してみます。
 
 ```sh
->
+> python run.py
+Hello, here is pip test.
+Bow! Bow name is Taro!
 ```
 
+`piptest` の `call()` と `dog.bark()` が呼び出せました。
+
+
 ## piptestのアップデート
-パッケージのアップデートは以下のコマンドで行います。
+`piptest` に変更を加えてアップデートしたとします。
+
+一般に、パッケージのアップデートは以下のコマンドで行います。
 
 ```sh
 > pip install --upgrade [パッケージ名]
@@ -55,5 +62,5 @@ if __name__ == "__main__":
 なので、 `piptest` をアップデートしたい場合は以下のコマンドを使います。
 
 ```sh
-> pip install --upgrade piptest
+> pip install --upgrade git+https://github.com/taketakeyyy/piptest.git
 ```
