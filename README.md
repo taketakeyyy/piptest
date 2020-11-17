@@ -28,7 +28,7 @@ PyPi に公開したくない自作モジュールを作ることはよくあり
 import sys
 sys.path.append('mylib')
 
-# モジュール内の関数を import する
+# piptest パッケージ内のモジュールを import する
 from piptest import call
 from piptest import Dog
 from piptest import __author__
@@ -36,10 +36,10 @@ from piptest import __url__
 from piptest import __version__
 
 if __name__ == "__main__":
-    call()
+    call()  # Hello, here is pip test.
 
     dog = Dog("Taro")
-    dog.bark()
+    dog.bark()  # Bow! Bow name is Taro!
 
     print("===[piptest info]===")
     print(f"author:{__author__}")
