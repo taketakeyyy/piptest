@@ -79,3 +79,7 @@ version:0.1.0
 # システムにインストールした場合
 > pip install --upgrade git+https://github.com/taketakeyyy/piptest.git
 ```
+
+# 参考
+* [python の pip でインストールできる自作モジュールを作ってみる](https://blog.chocolapod.net/momokan/entry/117)
+* [navdeep-G/setup.py](https://github.com/navdeep-G/setup.py)
